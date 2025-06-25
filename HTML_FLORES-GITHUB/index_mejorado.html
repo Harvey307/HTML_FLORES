@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tulipanes Estilo Animado</title>
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(circle at center, #0d1b2a 0%, #000 100%);
+      height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .scene {
+      position: relative;
+      display: flex;
+      gap: 5vmin;
+      margin-bottom: 5vmin;
+    }
+
+    .flower {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: sway 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes sway {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(3deg); }
+    }
+
+    .stem {
+      width: 0.6vmin;
+      height: 14vmin;
+      background: linear-gradient(to top, #0a4d00, #3fcf3f);
+      border-radius: 1vmin;
+      z-index: 1;
+    }
+
+    .petals {
+      position: relative;
+      width: 10vmin;
+      height: 6vmin;
+      margin-bottom: -1vmin;
+    }
+
+    .petal {
+      position: absolute;
+      width: 4vmin;
+      height: 6vmin;
+      background: radial-gradient(circle at 30% 30%, #f76c9e, #d22d6c);
+      border-radius: 50% 50% 0 0;
+      transform-origin: bottom center;
+    }
+
+    .petal--left {
+      left: 0;
+      transform: rotate(-15deg);
+      z-index: 1;
+    }
+
+    .petal--center {
+      left: 3vmin;
+      z-index: 2;
+    }
+
+    .petal--right {
+      left: 6vmin;
+      transform: rotate(15deg);
+      z-index: 1;
+    }
+
+    .leaves {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2vmin;
+      z-index: 0;
+    }
+
+    .leaf-pair {
+      display: flex;
+      justify-content: center;
+      gap: 0.8vmin;
+    }
+
+    .leaf {
+      width: 4vmin;
+      height: 6vmin;
+      background: linear-gradient(to top, #1a8e2c, #3fcf3f);
+      border-radius: 50% 0;
+      transform: rotate(45deg);
+      animation: leaf-wiggle 5s ease-in-out infinite;
+    }
+
+    .leaf.right {
+      transform: rotate(-45deg);
+    }
+
+    @keyframes leaf-wiggle {
+      0%, 100% { transform: scale(1) rotate(45deg); }
+      50% { transform: scale(1.05) rotate(50deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <!-- Flor 1 -->
+    <div class="flower">
+      <div class="petals">
+        <div class="petal petal--left"></div>
+        <div class="petal petal--center"></div>
+        <div class="petal petal--right"></div>
+      </div>
+      <div class="stem"></div>
+      <div class="leaves">
+        <div class="leaf-pair">
+          <div class="leaf"></div>
+          <div class="leaf right"></div>
+        </div>
+        <div class="leaf-pair">
+          <div class="leaf"></div>
+          <div class="leaf right"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flor 2 -->
+    <div class="flower">
+      <div class="petals">
+        <div class="petal petal--left"></div>
+        <div class="petal petal--center"></div>
+        <div class="petal petal--right"></div>
+      </div>
+      <div class="stem"></div>
+      <div class="leaves">
+        <div class="leaf-pair">
+          <div class="leaf"></div>
+          <div class="leaf right"></div>
+        </div>
+        <div class="leaf-pair">
+          <div class="leaf"></div>
+          <div class="leaf right"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flor 3 -->
+    <div class="flower">
+      <div class="petals">
+        <div class="petal petal--left"></div>
+        <div class="petal petal--center"></div>
+        <div class="petal petal--right"></div>
+      </div>
+      <div class="stem"></div>
+      <div class="leaves">
+        <div class="leaf-pair">
+          <div class="leaf"></div>
+          <div class="leaf right"></div>
+        </div>
+        <div class="leaf-pair">
+          <div class="leaf"></div>
+          <div class="leaf right"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
