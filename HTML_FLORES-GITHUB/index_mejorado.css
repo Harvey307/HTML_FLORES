@@ -6,6 +6,7 @@ body {
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  font-family: sans-serif;
 }
 
 .night {
@@ -17,18 +18,21 @@ body {
 
 .flowers {
   display: flex;
-  gap: 6vmin;
-  margin-bottom: 5vmin;
+  gap: 5vmin;
+  margin-bottom: 6vmin;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .tulip {
   position: relative;
-  animation: sway 4s ease-in-out infinite alternate;
+  animation: sway 3s ease-in-out infinite alternate;
+  transform-origin: bottom center;
 }
 
 @keyframes sway {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(2deg); }
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(3deg); }
 }
 
 .tulip__leafs {
@@ -45,40 +49,44 @@ body {
   background: radial-gradient(circle at 30% 30%, #f76c9e, #d22d6c);
   border-radius: 50% 50% 0 0;
   transform-origin: bottom center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
 }
 
 .petal--left {
   left: 0;
-  transform: rotate(-15deg);
+  transform: rotate(-18deg);
   z-index: 1;
 }
 
 .petal--center {
   left: 3vmin;
-  z-index: 2;
+  z-index: 3;
 }
 
 .petal--right {
   left: 6vmin;
-  transform: rotate(15deg);
-  z-index: 1;
+  transform: rotate(18deg);
+  z-index: 2;
 }
 
 .tulip__center {
   position: absolute;
   bottom: 0;
-  left: 2.3vmin;
+  left: 2.8vmin;
   width: 4vmin;
-  height: 5vmin;
+  height: 5.5vmin;
   background: linear-gradient(to top, #c2185b, #e91e63);
   border-radius: 50% 50% 0 0;
-  z-index: 3;
+  z-index: 4;
+  box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.2);
 }
 
 .tulip__stem {
-  width: 0.6vmin;
+  width: 0.8vmin;
   height: 10vmin;
   background: linear-gradient(to top, #0a4d00, #3fcf3f);
   margin: auto;
   border-radius: 1vmin;
+  box-shadow: 0 0 5px rgba(63, 207, 63, 0.3);
 }
